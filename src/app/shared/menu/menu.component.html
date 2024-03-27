@@ -1,0 +1,18 @@
+<nav> 
+    <input type="checkbox" id="toogle">
+    <div class="titulo">Busquedas</div>
+    <ul class="list">
+        <li *ngFor="let item of Menu" 
+            [routerLink]="[item.ruta]"
+            routerLinkActive="active" 
+            (click)="cerrarMenu()" >
+            {{item.texto}}
+            
+        </li>  
+    </ul>    
+    <label for="toogle" class="icon-bars">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </label>        
+</nav>
