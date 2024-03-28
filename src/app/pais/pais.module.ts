@@ -8,9 +8,10 @@ import { InfPaisComponent } from './pages/inf-pais/inf-pais.component';
 import { PorPaisComponent } from './pages/por-pais/por-pais.component';
 import { PorRegionComponent } from './pages/por-region/por-region.component';
 import { PorSubregionComponent } from './pages/por-subregion/por-subregion.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SelectorPageComponent } from './pages/selector-page/selector-page.component';
+import { PorCapitalComponent } from './pages/por-capital/por-capital.component';
 
 
 
@@ -22,20 +23,23 @@ import { SelectorPageComponent } from './pages/selector-page/selector-page.compo
     PorPaisComponent,
     PorRegionComponent,
     PorSubregionComponent,
-    SelectorPageComponent
+    SelectorPageComponent,
+    PorCapitalComponent
   ],
   imports: [
     CommonModule,
     PaisRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports:[
     InfPaisComponent,
     PorPaisComponent,
     PorRegionComponent,
     PorSubregionComponent,
-    SelectorPageComponent
+    SelectorPageComponent,
+    PorCapitalComponent
   ]
 })
 export class PaisModule { }

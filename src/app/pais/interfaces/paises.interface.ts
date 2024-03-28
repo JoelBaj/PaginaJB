@@ -1,16 +1,36 @@
-export interface Country {
+export interface PaisSmall {
+    name:         Name;
+    cca3:         string;
+    capital:      string[];
+    altSpellings: string[];
+}
+
+export interface Name {
+    common:     string;
+    official:   string;
+    nativeName: { [key: string]: NativeName };
+}
+
+export interface NativeName {
+    official: string;
+    common:   string;
+}
+
+
+
+export interface Pais {
     name:         Name;
     tld:          string[];
     cca2:         string;
     ccn3:         string;
     cca3:         string;
-    cioc?:        string;
+    cioc:         string;
     independent:  boolean;
     status:       string;
     unMember:     boolean;
-    currencies:   { [key: string]: Currency };
+    currencies:   Currencies;
     idd:          Idd;
-    capital?:     string[];
+    capital:      string[];
     altSpellings: string[];
     region:       string;
     subregion:    string;
@@ -24,20 +44,20 @@ export interface Country {
     flag:         string;
     maps:         Maps;
     population:   number;
-    gini?:        { [key: string]: number };
+    gini:         Gini;
     fifa:         string;
     car:          Car;
     timezones:    string[];
     continents:   string[];
-    flags:        Flags;
+    flags:        CoatOfArms;
     coatOfArms:   CoatOfArms;
     startOfWeek:  string;
     capitalInfo:  CapitalInfo;
-    postalCode?:  PostalCode;
+    postalCode:   PostalCode;
 }
 
 export interface CapitalInfo {
-    latlng?: number[];
+    latlng: number[];
 }
 
 export interface Car {
@@ -50,7 +70,11 @@ export interface CoatOfArms {
     svg: string;
 }
 
-export interface Currency {
+export interface Currencies {
+    PEN: Pen;
+}
+
+export interface Pen {
     name:   string;
     symbol: string;
 }
@@ -65,10 +89,8 @@ export interface Eng {
     m: string;
 }
 
-export interface Flags {
-    png:  string;
-    svg:  string;
-    alt?: string;
+export interface Gini {
+    "2019": number;
 }
 
 export interface Idd {
@@ -77,18 +99,9 @@ export interface Idd {
 }
 
 export interface Languages {
-    lit?: string;
-    por?: string;
-    zho?: string;
-    kaz?: string;
-    rus?: string;
-    aze?: string;
-    kir?: string;
-    uzb?: string;
-    spa?: string;
-    cat?: string;
-    eus?: string;
-    glc?: string;
+    aym: string;
+    que: string;
+    spa: string;
 }
 
 export interface Maps {
@@ -99,19 +112,13 @@ export interface Maps {
 export interface Name {
     common:     string;
     official:   string;
-    nativeName: NativeName;
+    nativeName1: NativeName1;
 }
 
-export interface NativeName {
-    lit?: Translation;
-    por?: Translation;
-    zho?: Translation;
-    kaz?: Translation;
-    rus?: Translation;
-    aze?: Translation;
-    kir?: Translation;
-    uzb?: Translation;
-    spa?: Translation;
+export interface NativeName1 {
+    aym: Translation;
+    que: Translation;
+    spa: Translation;
 }
 
 export interface Translation {

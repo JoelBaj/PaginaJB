@@ -14,11 +14,12 @@
 }
 
 .footer__copy {
-    --padding-container: 15px 0;
+    --padding-container: 13px 0;
     text-align: center;
     color: #fff;
 }
 
 .footer__copyright {
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 22px;
 }

@@ -1,18 +1,27 @@
-<nav> 
-    <input type="checkbox" id="toogle">
-    <div class="titulo">Busquedas</div>
-    <ul class="list">
-        <li *ngFor="let item of Menu" 
-            [routerLink]="[item.ruta]"
-            routerLinkActive="active" 
-            (click)="cerrarMenu()" >
-            {{item.texto}}
-            
-        </li>  
-    </ul>    
-    <label for="toogle" class="icon-bars">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </label>        
+<nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand me-auto" href="#">Busquedas</a>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Busquedas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                    <li class="nav-item nav-link" *ngFor="let item of Menu" [routerLink]="[item.ruta]"
+                        routerLinkActive="active">
+                        {{item.texto}}
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
 </nav>

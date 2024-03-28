@@ -1,0 +1,17 @@
+li {
+    list-style-type: none;
+}
+
+
+h2 {
+    text-align: justify;
+    padding: 0.3rem;
+}
+
+h3 {
+    text-align: center;
+}
+
+.inf {
+    padding: 0.3rem;
+}

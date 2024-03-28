@@ -1,1 +1,37 @@
-<p>inf-pais works!</p>
+<div *ngIf="!pais; else divPais" class="alert alert-info">
+    Espere por favor...
+</div>
+
+<ng-template #divPais>
+    <div *ngIf="pais && pais.length > 0">
+        <div class="row">
+            <div class="col-12">
+                <h2>Pais: <small>{{ pais[0].name.common }}</small></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="ban">Bandera</h3>
+                <img [src]="pais[0].flags.png" class="imagen img-fluid img-thumbnail" />
+            </div>
+            <div class="col-md">
+                <h3 class="inf">Información</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Población:</strong> {{ pais[0].population | number }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Capital:</strong> {{ pais[0].capital }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Region:</strong> {{ pais[0].region }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Sub Region:</strong> {{ pais[0].subregion }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</ng-template>

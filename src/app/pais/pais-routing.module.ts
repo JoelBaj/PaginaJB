@@ -5,6 +5,7 @@ import { PorRegionComponent } from './pages/por-region/por-region.component';
 import { PorSubregionComponent } from './pages/por-subregion/por-subregion.component';
 import { InfPaisComponent } from './pages/inf-pais/inf-pais.component';
 import { SelectorPageComponent } from './pages/selector-page/selector-page.component';
+import { PorCapitalComponent } from './pages/por-capital/por-capital.component';
 
 const routes: Routes = [
   {
@@ -13,8 +14,9 @@ const routes: Routes = [
       {path:'pais', component:PorPaisComponent},
       {path:'region', component:PorRegionComponent},
       {path:'subregion', component:PorSubregionComponent},
-      {path:':id', component:InfPaisComponent},
+      { path: 'capital', component: PorCapitalComponent },
       {path:'selector', component:SelectorPageComponent},
+      {path:':id', component:InfPaisComponent},
       {path:'**', redirectTo:'pais' }
     ]
   }

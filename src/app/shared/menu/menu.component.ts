@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Pais } from '../../../../../07-selectores/src/app/paises/interfaces/paises.interface';
+
+import { Router } from '@angular/router';
 
 
 interface MenuItem{
@@ -15,15 +16,14 @@ interface MenuItem{
 })
 export class MenuComponent {
 
+  constructor() { }
     Menu:MenuItem[] =[
       {texto:'Pais', ruta:'/pais/pais'},
       {texto:'Region', ruta:'/pais/region'},
-      {texto:'Subregion', ruta:'/pais/subregion'},
+      {texto:'Sub region', ruta:'/pais/subregion'},
+      {texto:'Capital', ruta:'/pais/capital'},
       {texto:'Selector', ruta:'/pais/selector'}
       
     ]
 
-    cerrarMenu(){
-      
-    }
 }
