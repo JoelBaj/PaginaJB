@@ -46,7 +46,7 @@ export class PorCapitalComponent {
     this.termino = termino;
     this.mostrarSugerencias = true;
 
-    this.paisService.buscarPais(termino)
+    this.paisService.buscarCapital(termino)
       .subscribe(paises => this.paisesSugeridos = paises.splice(0, 10),
         (err) => this.paisesSugeridos = []
       );

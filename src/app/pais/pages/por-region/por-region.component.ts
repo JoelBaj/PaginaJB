@@ -59,7 +59,7 @@ export class PorRegionComponent implements OnInit {
     this.termino = termino;
     this.mostrarSugerencias = true;
 
-    this.paisService.buscarPais(termino)
+    this.paisService.buscarRegion(termino)
       .subscribe(paises => this.paisesSugeridos = paises.splice(0, 10),
         (err) => this.paisesSugeridos = []
       );
