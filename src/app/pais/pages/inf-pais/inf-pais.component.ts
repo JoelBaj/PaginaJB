@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap } from 'rxjs';
-import { Country } from '../../interfaces/pais.interfaces';
+import { Country, Currency } from '../../interfaces/pais.interfaces';
 import { PaisService } from '../../services/pais.service';
 
 @Component({
@@ -27,5 +27,10 @@ export class InfPaisComponent implements OnInit {
       tap(console.log)
     )
     .subscribe(pais => this.pais = pais);
-}
+  }
+
+  getMoneda(currencies: { [key: string]: Currency }): Currency[] {
+    return Object.values(currencies);
+  }
+ 
 }

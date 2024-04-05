@@ -6,38 +6,47 @@
     <div *ngIf="pais && pais.length > 0">
         <div class="row">
             <div class="col-12 d-flex justify-content-around">
-                <h2> Pais: <small>{{ pais[0].name.common }}</small></h2>
+                <h2> Pais: <small>{{ pais[0].name.common  }}</small></h2>
             </div>
         </div>
         <div class="col">
             <div class="card mb-12" style="max-width: 100%;">
                 <div class="row g-0">
                     <div class="col-md-4 d-flex justify-content-around">
-        
-                        <img [src]="pais[0].flags.png" class="imagen img-fluid img-thumbnail" />
+                        <img [src]="pais[0].flags.png" class="img-fluid img-thumbnail" />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title d-flex justify-content-around"><strong>Información</strong></h5>
                             <ul class="list-group">
-        
+                                <li class="list-group-item">
+                                    <strong>Oficial name:</strong>  {{pais[0].name.official}}
+                                </li>
                                 <li class="list-group-item">
                                     <strong>Población:</strong> {{ pais[0].population | number }}
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>Capital:</strong> {{ pais[0].capital }}
+                                    <strong>Capital:</strong> {{ pais[0].capital }} 
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>Region:</strong> {{ pais[0].region }}
+                                    <strong>Region:</strong> {{ pais[0].region }}  <strong>Sub Region:</strong> {{ pais[0].subregion }} 
                                 </li>
-                                <li class="list-group-item">
+                                <!-- <li class="list-group-item">
                                     <strong>Sub Region:</strong> {{ pais[0].subregion }}
+                                </li> -->
+                                <li class="list-group-item" *ngFor="let currency of getMoneda(pais[0].currencies)">
+                                    <strong>Moneda/Simbolo:</strong>  {{ currency.name }}, {{ currency.symbol }}
                                 </li>
                                 <li class="list-group-item">
                                     <strong>Fronteras:</strong> {{ pais[0].borders }}
                                 </li>
+                                <!-- <li class="list-group-item">
+                                    <strong>Descripcion:</strong> {{ pais[0].flags.alt}}
+                                </li> -->
+                                
                             </ul>
                         </div>
+                        
                        
                     </div>
                 </div>
